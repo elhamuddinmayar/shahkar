@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-mist-50 text-ink-900 font-body antialiased;
+}
+
+<<<<<<< HEAD
+=======
+html[dir='rtl'] body {
+  font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', Tahoma, sans-serif;
+}
+
+html[dir='rtl'] h1,
+html[dir='rtl'] h2,
+html[dir='rtl'] h3,
+html[dir='rtl'] h4,
+html[dir='rtl'] .font-display,
+html[dir='rtl'] .font-mono {
+  font-family: 'Noto Sans Arabic', Tahoma, sans-serif;
+  letter-spacing: 0;
+}
+
+html[dir='rtl'] .directional-icon {
+  transform: scaleX(-1);
+}
+
+>>>>>>> f0bf5f9 (language added)
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+::selection {
+  @apply bg-brand-500/20 text-ink-900;
+}
+
+.container-shahkar {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-10;
+}
+
+.eyebrow {
+  @apply inline-flex items-center gap-2 rounded-full border border-brand-700/15 bg-brand-50 px-3 py-1 text-[11px] font-mono uppercase tracking-[0.14em] text-brand-700;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg bg-brand-600 px-6 py-3 text-sm font-semibold text-white shadow-glow transition hover:bg-brand-700 active:scale-[0.98];
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border border-ink-900/10 bg-white px-6 py-3 text-sm font-semibold text-ink-900 transition hover:border-brand-600/40 hover:text-brand-700;
+}
+
+.btn-ghost-light {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/25 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/15;
+}
+
+.card {
+  @apply rounded-2xl border border-ink-900/5 bg-white shadow-card;
+}
+
+/* Pixel-dissolve motif echoing the mark's fragmenting corner squares */
+.pixel-field {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(93, 140, 246, 0.35) 1.4px, transparent 1.4px);
+  background-size: 22px 22px;
+  mask-image: radial-gradient(ellipse 60% 60% at 20% 20%, black, transparent 70%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
