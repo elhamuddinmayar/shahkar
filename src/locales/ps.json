@@ -1,7 +1,7 @@
 {
   "language": { "label": "ژبه", "english": "انګلیسي", "dari": "دري", "pashto": "پښتو" },
   "brand": { "name": "شاهکار", "tagline": "سافټویر حللارې" },
-  "nav": { "home": "کور", "services": "خدمتونه", "products": "محصولات", "projects": "پروژې", "pricing": "بیې", "about": "زموږ په اړه", "team": "ټیم", "blog": "بلاګ", "contact": "اړیکه", "quote": "د بیې غوښتنه", "openMenu": "مېنو پرانیزئ", "closeMenu": "مېنو وتړئ" },
+  "nav": { "home": "کور", "services": "خدمتونه", "products": "محصولات", "projects": "پروژې", "pricing": "بیې", "about": "زموږ په اړه", "team": "ټیم", "blog": "بلاګ", "gallery": "انځورتون", "contact": "اړیکه", "quote": "د بیې غوښتنه", "openMenu": "مېنو پرانیزئ", "closeMenu": "مېنو وتړئ" },
   "footer": { "services": "خدمتونه", "quickLinks": "چټک لینکونه", "getInTouch": "اړیکه ونیسئ", "stayUpdated": "خبر اوسئ", "subscribe": "ګډون", "subscribed": "تاسو ګډون وکړ — مننه.", "error": "ستونزه رامنځته شوه — بیا هڅه وکړئ.", "rights": "ټول حقونه خوندي دي.", "privacy": "د محرمیت تګلاره", "terms": "د خدمت شرایط", "description": "د سافټویر او سیسټمونو انجینري شرکت چې د ودې په حال کې کاروبارونو لپاره ځانګړي وېب، موبایل، ERP او کلاوډ محصولات جوړوي.", "address": "کابل پوهنتون، کابل، افغانستان" },
   "services": { "web": "وېب پراختیا", "mobile": "د موبایل اپ پراختیا", "erp": "ERP او کلاوډ حللارې", "design": "UI/UX ډیزاین", "database": "ډیټابیس انجینري", "consulting": "د معلوماتي ټکنالوژۍ مشوره" }
 }

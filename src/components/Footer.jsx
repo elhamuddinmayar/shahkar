@@ -5,10 +5,12 @@ import { footerServiceLinks, footerCompanyLinks, siteInfo } from '../data/nav'
 import logo from '../assets/logo.png'
 import SocialIcon from './SocialIcon'
 import { sendNewsletterSignup } from '../lib/emailjsHelpers'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function Footer() {
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState('idle') // idle | sending | success | error
+  const { t } = useLanguage()
 
   const handleSubscribe = async (e) => {
     e.preventDefault()
@@ -30,10 +32,10 @@ export default function Footer() {
         <div className="lg:col-span-4">
           <Link to="/" className="flex items-center gap-2.5">
             <img src={logo} alt="Shahkar logo" className="h-9 w-9 object-contain" />
-            <span className="font-display text-lg font-bold tracking-tight">{siteInfo.name}</span>
+            <span className="font-display text-lg font-bold tracking-tight">{t('brand.name')}</span>
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
-            {siteInfo.description}
+            {t('footer.description')}
           </p>
           <div className="mt-6 flex gap-3">
             {['linkedin', 'twitter', 'github'].map((name) => (
@@ -50,12 +52,12 @@ export default function Footer() {
         </div>
 
         <div className="lg:col-span-2">
-          <h3 className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand-300">Services</h3>
+          <h3 className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand-300">{t('footer.services')}</h3>
           <ul className="mt-4 space-y-2.5 text-sm text-white/60">
             {footerServiceLinks.map((s) => (
               <li key={s}>
                 <Link to="/services" className="transition hover:text-white">
-                  {s}
+                  {t(`services.${s}`)}
                 </Link>
               </li>
             ))}
@@ -63,12 +65,12 @@ export default function Footer() {
         </div>
 
         <div className="lg:col-span-2">
-          <h3 className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand-300">Quick Links</h3>
+          <h3 className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand-300">{t('footer.quickLinks')}</h3>
           <ul className="mt-4 space-y-2.5 text-sm text-white/60">
             {footerCompanyLinks.slice(0, 6).map((l) => (
               <li key={l.to}>
                 <Link to={l.to} className="transition hover:text-white">
-                  {l.label}
+                  {t(`nav.${l.key}`)}
                 </Link>
               </li>
             ))}
@@ -76,11 +78,11 @@ export default function Footer() {
         </div>
 
         <div className="lg:col-span-4">
-          <h3 className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand-300">Get In Touch</h3>
+          <h3 className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand-300">{t('footer.getInTouch')}</h3>
           <ul className="mt-4 space-y-3 text-sm text-white/60">
             <li className="flex items-start gap-3">
               <MapPin size={16} className="mt-0.5 shrink-0 text-brand-300" />
-              <span>{siteInfo.address}</span>
+              <span>{t('footer.address')}</span>
             </li>
             <li className="flex items-center gap-3">
               <Phone size={16} className="shrink-0 text-brand-300" />
@@ -93,9 +95,9 @@ export default function Footer() {
           </ul>
 
           <form onSubmit={handleSubscribe} className="mt-6">
-            <p className="mb-2 text-sm font-medium text-white/80">Stay Updated</p>
+            <p className="mb-2 text-sm font-medium text-white/80">{t('footer.stayUpdated')}</p>
             {status === 'success' ? (
-              <p className="text-sm text-brand-300">You're subscribed — thank you.</p>
+              <p className="text-sm text-brand-300">{t('footer.subscribed')}</p>
             ) : (
               <>
                 <div className="flex gap-2">
@@ -110,14 +112,14 @@ export default function Footer() {
                   <button
                     type="submit"
                     disabled={status === 'sending'}
-                    aria-label="Subscribe"
+                    aria-label={t('footer.subscribe')}
                     className="flex shrink-0 items-center justify-center rounded-lg bg-brand-600 px-3.5 text-white transition hover:bg-brand-700 disabled:opacity-60"
                   >
                     <ArrowRight size={16} />
                   </button>
                 </div>
                 {status === 'error' && (
-                  <p className="mt-2 text-xs text-red-300">Something went wrong — please try again.</p>
+                  <p className="mt-2 text-xs text-red-300">{t('footer.error')}</p>
                 )}
               </>
             )}
@@ -127,10 +129,10 @@ export default function Footer() {
 
       <div className="border-t border-white/5">
         <div className="container-shahkar flex flex-col items-center justify-between gap-3 py-6 text-xs text-white/45 sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} {siteInfo.fullName}. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {t('brand.name')}. {t('footer.rights')}</p>
           <div className="flex gap-5">
-            <Link to="/privacy" className="hover:text-white/80">Privacy Policy</Link>
-            <Link to="/terms" className="hover:text-white/80">Terms of Service</Link>
+            <Link to="/privacy" className="hover:text-white/80">{t('footer.privacy')}</Link>
+            <Link to="/terms" className="hover:text-white/80">{t('footer.terms')}</Link>
           </div>
         </div>
       </div>

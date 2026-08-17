@@ -10,8 +10,6 @@ body {
   @apply bg-mist-50 text-ink-900 font-body antialiased;
 }
 
-<<<<<<< HEAD
-=======
 html[dir='rtl'] body {
   font-family: 'Noto Sans Arabic', 'Noto Naskh Arabic', Tahoma, sans-serif;
 }
@@ -30,7 +28,6 @@ html[dir='rtl'] .directional-icon {
   transform: scaleX(-1);
 }
 
->>>>>>> f0bf5f9 (language added)
 h1, h2, h3, h4 {
   @apply font-display;
 }

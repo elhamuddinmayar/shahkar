@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
-import { Menu, X, ArrowUpRight } from 'lucide-react'
-import { navLinks, siteInfo } from '../data/nav'
+import { Menu, X, ArrowUpRight, Languages } from 'lucide-react'
+import { navLinks } from '../data/nav'
 import logo from '../assets/logo.png'
+import { useLanguage } from '../i18n/LanguageContext'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { language, setLanguage, t, languages } = useLanguage()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8)
@@ -32,10 +34,10 @@ export default function Navbar() {
           <img src={logo} alt="Shahkar logo" className="h-9 w-9 object-contain" />
           <span className="flex flex-col leading-tight">
             <span className="font-display text-[17px] font-bold tracking-tight text-ink-900">
-              {siteInfo.name}
+              {t('brand.name')}
             </span>
             <span className="font-mono text-[10px] uppercase tracking-[0.16em] text-brand-600">
-              {siteInfo.tagline}
+              {t('brand.tagline')}
             </span>
           </span>
         </Link>
@@ -53,18 +55,25 @@ export default function Navbar() {
                   }`
                 }
               >
-                {link.label}
+                {t(`nav.${link.key}`)}
               </NavLink>
             </li>
           ))}
         </ul>
 
         <div className="hidden items-center gap-2 lg:flex">
+          <label className="relative flex items-center text-ink-900/65">
+            <Languages size={16} className="pointer-events-none absolute start-2.5" />
+            <span className="sr-only">{t('language.label')}</span>
+            <select value={language} onChange={(e) => setLanguage(e.target.value)} aria-label={t('language.label')} className="h-10 cursor-pointer rounded-md border border-ink-900/10 bg-white py-2 pe-2 ps-8 text-[13px] font-medium outline-none focus:border-brand-500">
+              {Object.entries(languages).map(([code, item]) => <option key={code} value={code}>{item.nativeName}</option>)}
+            </select>
+          </label>
           <Link to="/contact" className="rounded-md px-3.5 py-2 text-[14px] font-medium text-ink-900/70 transition-colors hover:text-brand-700">
-            Contact
+            {t('nav.contact')}
           </Link>
           <Link to="/contact" className="btn-primary !px-4 !py-2.5 text-[13px]">
-            Get a Quote
+            {t('nav.quote')}
             <ArrowUpRight size={15} strokeWidth={2.5} />
           </Link>
         </div>
@@ -72,7 +81,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          aria-label={open ? 'Close menu' : 'Open menu'}
+          aria-label={open ? t('nav.closeMenu') : t('nav.openMenu')}
           aria-expanded={open}
           className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-ink-900/10 text-ink-900 lg:hidden"
         >
@@ -83,7 +92,7 @@ export default function Navbar() {
       {open && (
         <div className="border-t border-ink-900/8 bg-white lg:hidden">
           <ul className="container-shahkar flex flex-col gap-1 py-3">
-            {navLinks.concat([{ label: 'Contact', to: '/contact' }]).map((link) => (
+            {navLinks.concat([{ key: 'contact', to: '/contact' }]).map((link) => (
               <li key={link.to}>
                 <NavLink
                   to={link.to}
@@ -94,13 +103,22 @@ export default function Navbar() {
                     }`
                   }
                 >
-                  {link.label}
+                  {t(`nav.${link.key}`)}
                 </NavLink>
               </li>
             ))}
+            <li className="mt-2 border-t border-ink-900/8 pt-3">
+              <label className="flex items-center gap-2 px-3 text-sm font-medium text-ink-900/70">
+                <Languages size={17} />
+                <span>{t('language.label')}</span>
+                <select value={language} onChange={(e) => setLanguage(e.target.value)} className="ms-auto rounded-md border border-ink-900/10 bg-white px-3 py-2 outline-none focus:border-brand-500">
+                  {Object.entries(languages).map(([code, item]) => <option key={code} value={code}>{item.nativeName}</option>)}
+                </select>
+              </label>
+            </li>
             <li className="pt-2">
               <Link to="/contact" onClick={() => setOpen(false)} className="btn-primary w-full">
-                Get a Quote
+                {t('nav.quote')}
                 <ArrowUpRight size={15} strokeWidth={2.5} />
               </Link>
             </li>
