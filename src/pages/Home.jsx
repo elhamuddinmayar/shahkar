@@ -1,210 +1,50 @@
+import { ArrowDown, ArrowRight, ArrowUpRight, BrainCircuit, Check, Compass, Layers3, ShieldCheck } from 'lucide-react'
 import { Link } from 'react-router-dom'
-import { ArrowUpRight, CheckCircle2, Quote } from 'lucide-react'
-import StatGrid from '../components/StatGrid'
-import CTASection from '../components/CTASection'
-import { services, techStack, projects, testimonials } from '../data/content'
+import AnimatedBrand from '../components/AnimatedBrand'
+import ProductMockup from '../components/ProductMockup'
+import SiteCta from '../components/SiteCta'
+import { industries, process, projects, services, solutions, technology } from '../data/content'
 
-const heroStats = [
-  { value: 200, suffix: '+', label: 'Happy Clients' },
-  { value: 350, suffix: '+', label: 'Projects Done' },
-  { value: 99, suffix: '%', label: 'Success Rate' },
-]
+function SectionLead({ label, title, description, to, linkText }) {
+  return <div className="section-lead"><div><span className="label-line">{label}</span><h2>{title}</h2>{description && <p>{description}</p>}</div>{to && <Link className="inline-link" to={to}>{linkText} <ArrowUpRight size={18} /></Link>}</div>
+}
 
-const highlights = ['Custom development', '24/7 support', 'Agile methodology', 'On-time delivery']
+function Hero() {
+  return <section className="home-hero"><div className="container home-hero-inner"><div className="hero-content"><span className="hero-badge"><span /> SOFTWARE, SYSTEMS & DIGITAL PROGRESS</span><h1>Software for the <em>way forward.</em></h1><p>We design and build applications, connected business systems, and intelligent tools that make work simpler and possibilities bigger.</p><div className="hero-actions"><Link className="button button--accent" to="/contact">Start a project <ArrowUpRight size={18} /></Link><Link className="button button--line" to="/projects">See our thinking <ArrowRight size={18} /></Link></div><div className="hero-signoff"><span>01 / 07</span><a href="#approach">DISCOVER SHAHKAR <ArrowDown size={16} /></a></div></div><AnimatedBrand /></div></section>
+}
+
+function Approach() {
+  return <section className="approach-strip" id="approach"><div className="container approach-inner"><div className="approach-title"><span>THE SHAHKAR APPROACH</span><strong>Clarity at every step.</strong></div><div><Compass size={22} /><span><strong>Understand first</strong><small>Start with the real challenge.</small></span></div><div><Layers3 size={22} /><span><strong>Build with intent</strong><small>Make each part useful.</small></span></div><div><ShieldCheck size={22} /><span><strong>Think beyond launch</strong><small>Leave room to grow.</small></span></div></div></section>
+}
+
+function Services() {
+  return <section className="section home-services"><div className="container"><SectionLead label="01 / WHAT WE DO" title={<>Technology with a <em>clear purpose.</em></>} description="From the experience people see to the systems that keep business moving, our work connects every layer." to="/services" linkText="All services" /><div className="service-list">{services.slice(0, 4).map((service, index) => <Link to="/services" className="service-row" key={service.title}><span className="service-row-number">0{index + 1}</span><div><strong>{service.title}</strong><p>{service.description}</p></div><span className="service-row-category">{service.category}</span><span className="service-row-arrow"><ArrowUpRight size={23} /></span></Link>)}</div></div></section>
+}
+
+function Solutions() {
+  return <section className="section home-solutions"><div className="container solutions-composition"><div className="solutions-copy"><span className="label-line label-line--light">02 / BUSINESS SOLUTIONS</span><h2>Better systems.<br /><em>Better work.</em></h2><p>Useful software should fit your operations, connect your teams, and make the next decision easier.</p><div className="solution-points">{solutions.map((solution, index) => <div key={solution.name}><span>0{index + 1}</span><strong>{solution.name}</strong><ArrowUpRight size={16} /></div>)}</div><Link className="button button--white" to="/solutions">Explore solutions <ArrowUpRight size={18} /></Link></div><div className="solutions-image"><div className="solutions-image-top"><span>SHAHKAR / SYSTEMS</span><span>CONCEPT 001</span></div><ProductMockup compact /><div className="solutions-image-bottom"><span>One clear view of what matters.</span><span>◉ &nbsp; WORKFLOWS CONNECTED</span></div></div></div></section>
+}
+
+function ProjectPreview() {
+  return <section className="section home-projects"><div className="container"><SectionLead label="03 / CONCEPT STUDIES" title={<>A look at <em>what is possible.</em></>} description="Original interface studies that show our approach. These are illustrative concepts, not completed client projects." to="/projects" linkText="Explore concepts" /><div className="home-project-grid">{projects.slice(0, 2).map((project, index) => <Link to="/projects" className={`home-project home-project--${index}`} key={project.title}><div className="home-project-art"><ProductMockup variant={project.type} compact /><span>CONCEPT 0{index + 1}</span></div><div className="home-project-info"><div><span>{project.category}</span><h3>{project.title}</h3><p>{project.description}</p></div><ArrowUpRight size={30} strokeWidth={1.4} /></div></Link>)}</div></div></section>
+}
+
+function Technology() {
+  return <section className="section home-tech"><div className="container tech-home-layout"><div><span className="label-line">04 / OUR TOOLKIT</span><h2>The tools change. <em>The thinking stays sharp.</em></h2><p>We select technology for your context and the people who will use and maintain it.</p><Link className="inline-link" to="/technology">How we build <ArrowUpRight size={18} /></Link></div><div className="tech-home-list">{technology.slice(0, 4).map((group, index) => <div key={group.category}><span>0{index + 1}</span><strong>{group.category}</strong><p>{group.items.join(' / ')}</p></div>)}</div></div></section>
+}
+
+function Process() {
+  return <section className="section home-process"><div className="container"><SectionLead label="05 / OUR PROCESS" title={<>From first conversation <em>to what comes next.</em></>} description="A steady process makes complex work easier to see, discuss, and improve." /><div className="process-grid">{process.map(([number, name, detail]) => <div className="process-card" key={number}><span>{number}</span><strong>{name}</strong><p>{detail}</p></div>)}</div></div></section>
+}
+
+function About() {
+  return <section className="section home-about"><div className="container about-home-layout"><div className="about-home-visual"><span className="about-home-index">SHAHKAR / AFGHANISTAN</span><div className="about-home-quote">Ideas become useful when people and engineering work together<span>.</span></div><span className="about-home-bottom">SOFTWARE SOLUTION &nbsp; ↗</span></div><div><span className="label-line">06 / ABOUT US</span><h2>A thoughtful partner for <em>what comes next.</em></h2><p>Shahkar Software Solution brings product thinking, design, and engineering together. We focus on the real needs behind a brief, then build systems that are clear, reliable, and ready to evolve.</p><ul><li><Check size={17} /> Business-minded decisions</li><li><Check size={17} /> Purposeful digital experiences</li><li><Check size={17} /> Reliable foundations</li></ul><Link className="inline-link" to="/about">Meet Shahkar <ArrowUpRight size={18} /></Link></div></div></section>
+}
+
+function Industries() {
+  return <section className="section home-industries"><div className="container"><SectionLead label="07 / WHERE WE WORK" title={<>Built for different <em>ways of working.</em></>} /><div className="industry-list">{industries.map((industry, index) => <Link to="/solutions" key={industry}><span>0{index + 1}</span>{industry}<ArrowUpRight size={17} /></Link>)}</div></div></section>
+}
 
 export default function Home() {
-  return (
-    <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-ink-950 text-white">
-        <div className="pixel-field" />
-        <div className="absolute -right-40 -top-40 h-96 w-96 rounded-full bg-brand-600/25 blur-[120px]" />
-        <div className="absolute -left-24 bottom-0 h-72 w-72 rounded-full bg-sky-500/15 blur-[110px]" />
-
-        <div className="container-shahkar relative grid grid-cols-1 gap-14 py-20 sm:py-24 lg:grid-cols-12 lg:py-28">
-          <div className="lg:col-span-7">
-            <span className="eyebrow border-white/15 bg-white/5 text-brand-300">
-              Leading Software Solutions
-            </span>
-            <h1 className="mt-6 font-display text-[2.6rem] font-bold leading-[1.06] tracking-tight sm:text-6xl">
-              Engineering{' '}
-              <span className="bg-gradient-to-r from-sky-400 via-brand-300 to-brand-400 bg-clip-text text-transparent">
-                Tomorrow's
-              </span>{' '}
-              Software, Today
-            </h1>
-            <p className="mt-6 max-w-xl text-[15px] leading-relaxed text-white/60 sm:text-[17px]">
-              Shahkar builds custom web, mobile, and enterprise software that drives measurable
-              growth and real operational efficiency — not just another vendor deck.
-            </p>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <Link to="/contact" className="btn-primary">
-                Get Started
-                <ArrowUpRight size={16} strokeWidth={2.5} />
-              </Link>
-              <Link to="/services" className="btn-ghost-light">
-                Our Services
-              </Link>
-            </div>
-
-            <ul className="mt-10 grid grid-cols-2 gap-x-6 gap-y-3 sm:grid-cols-4">
-              {highlights.map((h) => (
-                <li key={h} className="flex items-center gap-2 text-[13px] text-white/55">
-                  <CheckCircle2 size={15} className="shrink-0 text-brand-400" />
-                  {h}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="lg:col-span-5">
-            <div className="relative mx-auto max-w-sm rounded-2xl border border-white/10 bg-white/[0.03] p-6 backdrop-blur">
-              <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand-300">Live Snapshot</p>
-              <div className="mt-5">
-                <StatGrid stats={heroStats} dark />
-              </div>
-              <div className="mt-7 space-y-3">
-                {['Web & Mobile Delivery', 'ERP & Cloud Systems', 'Dedicated Support Team'].map((row) => (
-                  <div
-                    key={row}
-                    className="flex items-center justify-between rounded-lg border border-white/8 bg-white/[0.02] px-4 py-3 text-sm text-white/70"
-                  >
-                    {row}
-                    <span className="h-2 w-2 rounded-full bg-brand-400" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services preview */}
-      <section className="py-20 sm:py-24">
-        <div className="container-shahkar">
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <span className="eyebrow">Our Services</span>
-              <h2 className="mt-4 max-w-lg font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-                Everything you need to ship, run and grow.
-              </h2>
-            </div>
-            <Link to="/services" className="btn-secondary shrink-0">
-              View All Services
-              <ArrowUpRight size={15} />
-            </Link>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {services.slice(0, 4).map(({ icon: Icon, title, summary }) => (
-              <div key={title} className="card group p-6 transition hover:-translate-y-1 hover:shadow-glow">
-                <div className="flex h-11 w-11 items-center justify-center rounded-lg bg-brand-50 text-brand-700 transition group-hover:bg-brand-600 group-hover:text-white">
-                  <Icon size={20} strokeWidth={1.8} />
-                </div>
-                <h3 className="mt-5 font-display text-lg font-semibold text-ink-900">{title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-900/55">{summary}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Featured projects */}
-      <section className="bg-mist-100 py-20 sm:py-24">
-        <div className="container-shahkar">
-          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <span className="eyebrow">Our Projects</span>
-              <h2 className="mt-4 max-w-lg font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-                Featured work from the Shahkar portfolio.
-              </h2>
-            </div>
-            <Link to="/projects" className="btn-secondary shrink-0">
-              View All Projects
-              <ArrowUpRight size={15} />
-            </Link>
-          </div>
-
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.slice(0, 3).map((p) => (
-              <div key={p.title} className="card overflow-hidden">
-                <div className="relative flex h-36 items-center justify-center bg-gradient-to-br from-ink-900 via-brand-800 to-brand-600">
-                  <div className="pixel-field opacity-40" />
-                  <span className="relative font-display text-2xl font-bold text-white/90">
-                    {p.title.split(' ')[0]}
-                  </span>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-medium text-brand-700">{p.category}</span>
-                    <span
-                      className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${
-                        p.status === 'Available' ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700'
-                      }`}
-                    >
-                      {p.status}
-                    </span>
-                  </div>
-                  <h3 className="mt-3 font-display text-lg font-semibold text-ink-900">{p.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-ink-900/55">{p.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Tech stack */}
-      <section className="py-20 sm:py-24">
-        <div className="container-shahkar text-center">
-          <span className="eyebrow">Our Tech Stack</span>
-          <h2 className="mx-auto mt-4 max-w-lg font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-            Technologies We Use
-          </h2>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
-            {techStack.map((t) => (
-              <span
-                key={t}
-                className="rounded-full border border-ink-900/8 bg-white px-4 py-2 text-sm font-medium text-ink-900/70 shadow-sm"
-              >
-                {t}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="bg-mist-100 py-20 sm:py-24">
-        <div className="container-shahkar">
-          <div className="text-center">
-            <span className="eyebrow">Client Testimonials</span>
-            <h2 className="mx-auto mt-4 max-w-lg font-display text-3xl font-bold tracking-tight text-ink-900 sm:text-4xl">
-              What Our Clients Say
-            </h2>
-          </div>
-          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-3">
-            {testimonials.map((t) => (
-              <div key={t.name} className="card p-6">
-                <Quote size={22} className="text-brand-300" />
-                <p className="mt-4 text-sm leading-relaxed text-ink-900/70">&ldquo;{t.quote}&rdquo;</p>
-                <div className="mt-6">
-                  <p className="text-sm font-semibold text-ink-900">{t.name}</p>
-                  <p className="text-xs text-ink-900/50">{t.role}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <CTASection
-        title="Ready to Transform Your Business?"
-        description="Join 200+ companies that trust Shahkar for their digital transformation. Let's turn your vision into reality."
-        primary={{ label: 'Get Free Consultation', to: '/contact' }}
-        secondary={{ label: 'Explore Services', to: '/services' }}
-      />
-    </>
-  )
+  return <><Hero /><Approach /><Services /><Solutions /><ProjectPreview /><Technology /><Process /><About /><Industries /><SiteCta /></>
 }

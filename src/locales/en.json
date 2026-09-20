@@ -1,7 +1,0 @@
-{
-  "language": { "label": "Language", "english": "English", "dari": "Dari", "pashto": "Pashto" },
-  "brand": { "name": "Shahkar", "tagline": "Software Solutions" },
-  "nav": { "home": "Home", "services": "Services", "products": "Products", "projects": "Projects", "pricing": "Pricing", "about": "About", "team": "Team", "blog": "Blog", "gallery": "Gallery", "contact": "Contact", "quote": "Get a Quote", "openMenu": "Open menu", "closeMenu": "Close menu" },
-  "footer": { "services": "Services", "quickLinks": "Quick Links", "getInTouch": "Get In Touch", "stayUpdated": "Stay Updated", "subscribe": "Subscribe", "subscribed": "You're subscribed — thank you.", "error": "Something went wrong — please try again.", "rights": "All rights reserved.", "privacy": "Privacy Policy", "terms": "Terms of Service", "description": "A software and systems engineering company building custom web, mobile, ERP and cloud products for growing businesses.", "address": "Kabul University, Kabul, Afghanistan" },
-  "services": { "web": "Web Development", "mobile": "Mobile App Development", "erp": "ERP & Cloud Solutions", "design": "UI/UX Design", "database": "Database Engineering", "consulting": "IT Consulting" }
-}
