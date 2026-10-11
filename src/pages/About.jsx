@@ -1,13 +1,26 @@
-import { ArrowUpRight, Compass, HeartHandshake, ShieldCheck } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Compass, HeartHandshake, ShieldCheck } from 'lucide-react'
 import AnimatedBrand from '../components/AnimatedBrand'
-import PageIntro from '../components/PageIntro'
-import SiteCta from '../components/SiteCta'
-import { process } from '../data/content'
+import { SiteCta } from '../components/Sections'
+import { useLanguage } from '../i18n/LanguageContext'
+
+const valueIcons = [Compass, ShieldCheck, HeartHandshake]
 
 export default function About() {
-  return <><PageIntro number="04" eyebrow="ABOUT SHAHKAR" title={<>Built on understanding. <em>Driven by possibility.</em></>} description="Shahkar Software Solution brings human needs and strong engineering together to create useful digital systems." aside="Based in Afghanistan, with a perspective shaped by the opportunities technology can open." />
-    <section className="section about-story"><div className="container about-story-layout"><AnimatedBrand compact /><div><span className="label-line">OUR STORY</span><h2>We believe better technology begins with better listening.</h2><p>Every organization has a way of working that is uniquely its own. We look beyond a list of features to understand the people, decisions, and processes the software must support.</p><p>That understanding guides the design, the architecture, and the details that make a product valuable long after launch.</p><Link className="inline-link" to="/contact">Work with us <ArrowUpRight size={18} /></Link></div></div></section>
-    <section className="section values-page"><div className="container"><div className="page-section-heading"><span className="label-line">WHAT GUIDES US</span><h2>Our principles.</h2></div><div className="value-grid"><div><Compass size={30} /><span>01 / PURPOSE</span><h3>Start with the real need.</h3><p>We ask what needs to improve before deciding what should be built.</p></div><div><ShieldCheck size={30} /><span>02 / QUALITY</span><h3>Make it dependable.</h3><p>Clear interfaces and sound foundations make everyday use easier.</p></div><div><HeartHandshake size={30} /><span>03 / PARTNERSHIP</span><h3>Work openly together.</h3><p>Good products take honest conversations and shared decisions.</p></div></div></div></section>
-    <section className="section about-process"><div className="container"><div className="page-section-heading"><span className="label-line">OUR WORKING METHOD</span><h2>A process people can follow.</h2><p>We keep the path visible from first discovery to the next release.</p></div><div className="about-process-list">{process.map(([number, name, detail]) => <div key={number}><span>{number}</span><strong>{name}</strong><p>{detail}</p></div>)}</div></div></section><SiteCta title="Let's make something useful together." /></>
+  const { t } = useLanguage()
+  const { about } = t
+
+  return <>
+    <section className="page-intro"><div className="container about-layout">
+      <div><span className="label-line">{about.label}</span><h1>{about.title}</h1><p>{about.text}</p></div>
+      <AnimatedBrand />
+    </div></section>
+    <section className="section section--tint"><div className="container">
+      <h2 className="section-title">{about.valuesTitle}</h2>
+      <div className="card-grid">{t.values.map((value, index) => {
+        const Icon = valueIcons[index]
+        return <article className="card" key={index}><span className="card-icon"><Icon size={24} strokeWidth={1.7} /></span><h3>{value.title}</h3><p>{value.description}</p></article>
+      })}</div>
+    </div></section>
+    <SiteCta />
+  </>
 }

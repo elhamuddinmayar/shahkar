@@ -1,38 +1,45 @@
 import { useEffect } from 'react'
-import { Route, Routes, useLocation } from 'react-router-dom'
+import { Link, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import Services from './pages/Services'
-import Solutions from './pages/Solutions'
 import Projects from './pages/Projects'
 import About from './pages/About'
-import Technology from './pages/Technology'
-import Insights from './pages/Insights'
 import Contact from './pages/Contact'
+import { navigation } from './data/content'
+import { useLanguage } from './i18n/LanguageContext'
 
 function PageReset() {
   const { pathname } = useLocation()
+  const { t } = useLanguage()
+
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
 
   useEffect(() => {
-    window.scrollTo(0, 0)
-    const titles = { '/': 'Software for the way forward', '/services': 'Services', '/solutions': 'Solutions', '/projects': 'Concept studies', '/about': 'About', '/technology': 'Technology', '/insights': 'Insights', '/contact': 'Contact' }
-    document.title = `${titles[pathname] || 'Page not found'} | Shahkar Software Solution`
-  }, [pathname])
+    const page = navigation.find(([, path]) => path === pathname)
+    document.title = `${page ? t.nav[page[0]] : t.notFound.title} | Shahkar Software Solution`
+  }, [pathname, t])
 
   return null
+}
+
+function NotFound() {
+  const { t } = useLanguage()
+  return <section className="not-found"><div className="container"><span>404</span><h1>{t.notFound.title}</h1><Link className="button button--accent" to="/">{t.notFound.back}</Link></div></section>
 }
 
 export default function App() {
   return <><PageReset /><Navbar /><main id="main-content"><Routes>
     <Route path="/" element={<Home />} />
     <Route path="/services" element={<Services />} />
-    <Route path="/solutions" element={<Solutions />} />
     <Route path="/projects" element={<Projects />} />
     <Route path="/about" element={<About />} />
-    <Route path="/technology" element={<Technology />} />
-    <Route path="/insights" element={<Insights />} />
     <Route path="/contact" element={<Contact />} />
-    <Route path="*" element={<section className="not-found"><div className="container"><span>404 / PAGE NOT FOUND</span><h1>This page is out of view.</h1><a href="/">Return home →</a></div></section>} />
+    {/* Pages removed in the simplified site */}
+    <Route path="/solutions" element={<Navigate to="/services" replace />} />
+    <Route path="/technology" element={<Navigate to="/services" replace />} />
+    <Route path="/insights" element={<Navigate to="/about" replace />} />
+    <Route path="*" element={<NotFound />} />
   </Routes></main><Footer /></>
 }
