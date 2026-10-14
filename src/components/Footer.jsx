@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import ShahkarLogo from './ShahkarLogo'
-import { company, formatPhone, phoneLink } from '../data/company'
+import WhatsAppIcon from './WhatsAppIcon'
+import { company, formatPhone, phoneLink, whatsappLink } from '../data/company'
 import { navigation } from '../data/content'
 import { useLanguage } from '../i18n/LanguageContext'
 
@@ -11,7 +12,7 @@ export default function Footer() {
       <div className="footer-about">
         <Link to="/" className="brand brand--footer" dir="ltr"><ShahkarLogo size={44} tone="light" /><span>SHAHKAR<small>SOFTWARE SOLUTION</small></span></Link>
         <p>{t.footer.tagline}</p>
-        <div className="footer-phones">{company.phones.map(phone => <a key={phone} href={phoneLink(phone)} dir="ltr">{formatPhone(phone)}</a>)}</div>
+        <div className="footer-phones">{company.phones.map(phone => <span key={phone}><a href={phoneLink(phone)} dir="ltr">{formatPhone(phone)}</a><a className="footer-whatsapp" href={whatsappLink(phone, t.contact.whatsappGreeting)} target="_blank" rel="noopener noreferrer" aria-label={`${t.contact.whatsapp} ${formatPhone(phone)}`}><WhatsAppIcon size={17} /></a></span>)}</div>
       </div>
       <nav className="footer-links" aria-label="Footer">
         {navigation.map(([key, path]) => <Link key={path} to={path}>{t.nav[key]}</Link>)}

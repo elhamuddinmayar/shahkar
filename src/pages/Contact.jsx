@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Check, Clipboard, Languages, Mail, MapPin, Phone, Send } from 'lucide-react'
 import { PageIntro } from '../components/Sections'
-import { company, formatPhone, phoneLink } from '../data/company'
+import WhatsAppIcon from '../components/WhatsAppIcon'
+import { company, formatPhone, phoneLink, whatsappLink } from '../data/company'
 import { useLanguage } from '../i18n/LanguageContext'
 import { languages } from '../i18n/translations'
 
@@ -45,7 +46,13 @@ export default function Contact() {
       <aside className="contact-info">
         <div><MapPin size={20} /><span>{c.location}</span></div>
         <div><Languages size={20} /><span>{c.languagesNote}: <bdi dir="ltr">{languages.map((item, index) => <span key={item.code}>{index > 0 && ' · '}<bdi lang={item.htmlLang}>{item.name}</bdi></span>)}</bdi></span></div>
-        {company.phones.map(phone => <a key={phone} href={phoneLink(phone)}><Phone size={20} /><span dir="ltr">{formatPhone(phone)}</span></a>)}
+        {company.phones.map(phone => <div className="contact-phone" key={phone}>
+          <Phone size={20} /><span className="contact-phone-number" dir="ltr">{formatPhone(phone)}</span>
+          <span className="contact-phone-actions">
+            <a className="phone-action" href={phoneLink(phone)} aria-label={`${c.call} ${formatPhone(phone)}`}><Phone size={15} />{c.call}</a>
+            <a className="phone-action phone-action--whatsapp" href={whatsappLink(phone, c.whatsappGreeting)} target="_blank" rel="noopener noreferrer" aria-label={`${c.whatsapp} ${formatPhone(phone)}`}><WhatsAppIcon size={15} />{c.whatsapp}</a>
+          </span>
+        </div>)}
         {company.email && <a href={`mailto:${company.email}`}><Mail size={20} /><span>{company.email}</span></a>}
       </aside>
       <form className="contact-form" onSubmit={handleSubmit}>
