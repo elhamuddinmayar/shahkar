@@ -3,7 +3,7 @@ export const company = {
   tagline: 'Software shaped around your business.',
   location: 'Afghanistan',
   email: '',
-  phones: ['0794583734', '0748036107', '0785678006'],
+  phones: ['0794583734', '0748036107', '0748451797'],
   socials: [],
 }
 
