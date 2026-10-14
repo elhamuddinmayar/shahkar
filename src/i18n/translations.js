@@ -63,8 +63,8 @@ export const translations = {
       projectsDone: 'Projects completed',
     },
     team: [
-      { name: 'Elhamuddin Mayar', role: 'Founder & Lead Software Engineer', education: 'Graduated in Software Engineering, Kabul University', bio: 'Leads Shahkar projects from design to delivery, including web systems, mobile apps, and AI solutions.' },
-      { name: 'Abdul Haq Nabizoy', role: 'Software Developer · Network & Systems', bio: 'Builds full-stack web applications and network monitoring tools that are reliable and secure, and is growing into AI and automation.', keyProject: 'Key project: Smart Network Monitoring System' },
+      { name: 'Elhamuddin Mayar', role: 'Co-founder & Lead Software Engineer', education: 'Graduated in Software Engineering, Kabul University', bio: 'Leads Shahkar projects from design to delivery, including web systems, mobile apps, and AI solutions.' },
+      { name: 'Abdul Haq Nabizoy', role: 'Co-founder · Software Developer, Network & Systems', bio: 'Builds full-stack web applications and network monitoring tools that are reliable and secure, and is growing into AI and automation.', keyProject: 'Key project: Smart Network Monitoring System' },
     ],
     values: [
       { title: 'Listen first', description: 'We start by understanding your real need.' },
@@ -152,8 +152,8 @@ export const translations = {
       projectsDone: 'بشپړې شوې پروژې',
     },
     team: [
-      { name: 'الهام الدین مایار', role: 'بنسټ ایښودونکی او مخکښ سافټویر انجینر', education: 'د کابل پوهنتون د سافټویر انجینرۍ څانګې فارغ', bio: 'د شهکار پروژې له ډیزاین څخه تر سپارلو پورې رهبري کوي، په ګډون د ویب سیسټمونو، موبایل اپلیکیشنونو او مصنوعي ځیرکتیا حلونو.' },
-      { name: 'عبدالحق نبيزوی', role: 'سافټویر جوړونکی · شبکه او سیسټمونه', bio: 'باوري او خوندي فول سټک ویب اپلیکیشنونه او د شبکې د څارنې وسایل جوړوي، او د مصنوعي ځیرکتیا او اتومات کولو په برخه کې مخ په وده دی.', keyProject: 'مهمه پروژه: د شبکې هوښیار څارنیز سیسټم' },
+      { name: 'الهام الدین مایار', role: 'شریک بنسټ ایښودونکی او مخکښ سافټویر انجینر', education: 'د کابل پوهنتون د سافټویر انجینرۍ څانګې فارغ', bio: 'د شهکار پروژې له ډیزاین څخه تر سپارلو پورې رهبري کوي، په ګډون د ویب سیسټمونو، موبایل اپلیکیشنونو او مصنوعي ځیرکتیا حلونو.' },
+      { name: 'عبدالحق نبيزوی', role: 'شریک بنسټ ایښودونکی · سافټویر جوړونکی، شبکه او سیسټمونه', bio: 'باوري او خوندي فول سټک ویب اپلیکیشنونه او د شبکې د څارنې وسایل جوړوي، او د مصنوعي ځیرکتیا او اتومات کولو په برخه کې مخ په وده دی.', keyProject: 'مهمه پروژه: د شبکې هوښیار څارنیز سیسټم' },
     ],
     values: [
       { title: 'لومړی اورېدل', description: 'لومړی ستاسو اصلي اړتیا درک کوو.' },
@@ -241,8 +241,8 @@ export const translations = {
       projectsDone: 'پروژه‌های تکمیل‌شده',
     },
     team: [
-      { name: 'الهام الدین مایار', role: 'بنیان‌گذار و انجنیر ارشد نرم‌افزار', education: 'فارغ‌التحصیل رشته انجنیری نرم‌افزار، پوهنتون کابل', bio: 'پروژه‌های شهکار را از طراحی تا تحویل رهبری می‌کند، شامل سیستم‌های وب، اپلیکیشن‌های موبایل و راه‌حل‌های هوش مصنوعی.' },
-      { name: 'عبدالحق نبی‌زوی', role: 'توسعه‌دهنده نرم‌افزار · شبکه و سیستم‌ها', bio: 'اپلیکیشن‌های وب فول‌استک و ابزارهای نظارت شبکه را قابل اعتماد و امن می‌سازد و در زمینه هوش مصنوعی و خودکارسازی در حال رشد است.', keyProject: 'پروژه کلیدی: سیستم نظارت هوشمند شبکه' },
+      { name: 'الهام الدین مایار', role: 'هم‌بنیان‌گذار و انجنیر ارشد نرم‌افزار', education: 'فارغ‌التحصیل رشته انجنیری نرم‌افزار، پوهنتون کابل', bio: 'پروژه‌های شهکار را از طراحی تا تحویل رهبری می‌کند، شامل سیستم‌های وب، اپلیکیشن‌های موبایل و راه‌حل‌های هوش مصنوعی.' },
+      { name: 'عبدالحق نبی‌زوی', role: 'هم‌بنیان‌گذار · توسعه‌دهنده نرم‌افزار، شبکه و سیستم‌ها', bio: 'اپلیکیشن‌های وب فول‌استک و ابزارهای نظارت شبکه را قابل اعتماد و امن می‌سازد و در زمینه هوش مصنوعی و خودکارسازی در حال رشد است.', keyProject: 'پروژه کلیدی: سیستم نظارت هوشمند شبکه' },
     ],
     values: [
       { title: 'اول شنیدن', description: 'ابتدا نیاز واقعی شما را درک می‌کنیم.' },
