@@ -13,7 +13,7 @@ export function SectionHead({ label, title, to, linkText }) {
 
 export function ServiceGrid() {
   const { t } = useLanguage()
-  return <div className="card-grid">{t.services.map((service, index) => {
+  return <div className="card-grid card-grid--services">{t.services.map((service, index) => {
     const Icon = serviceIcons[index]
     return <article className="card" key={index}><span className="card-icon"><Icon size={24} strokeWidth={1.7} /></span><h3>{service.title}</h3><p>{service.description}</p></article>
   })}</div>

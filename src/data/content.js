@@ -1,9 +1,9 @@
 import { NetworkShieldLogo } from '../components/ProjectLogos'
 import elhamuddinPhoto from '../assets/team/elhamuddin-mayar.jpg'
-import { ArrowLeftRight, BookOpen, Blocks, BrainCircuit, Camera, CloudCog, GraduationCap, LandPlot, PanelsTopLeft, PenTool, Shirt, Smartphone, TrendingUp, Truck, Wallet, WashingMachine } from 'lucide-react'
+import { ArrowLeftRight, BookOpen, Blocks, BrainCircuit, Camera, CloudCog, Globe, GraduationCap, LandPlot, PanelsTopLeft, PenTool, Shirt, Smartphone, TrendingUp, Truck, Wallet, WashingMachine } from 'lucide-react'
 
 // Text for these lists lives in i18n/translations.js, in the same order.
-export const serviceIcons = [PanelsTopLeft, Smartphone, Blocks, BrainCircuit, PenTool, CloudCog]
+export const serviceIcons = [PanelsTopLeft, Smartphone, Blocks, BrainCircuit, PenTool, CloudCog, Globe]
 
 // Projects built by the Shahkar team
 export const projectMeta = [
