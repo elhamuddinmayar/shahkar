@@ -24,9 +24,9 @@ export const projectMeta = [
 // Technical staff. Text (name, role, education, bio) is in i18n/translations.js
 // under `team`, in the same order. To add a person, add an entry in both places.
 export const teamMeta = [
-  // showProjectCount: shows the company's project total (the number of projects above)
-  { photo: elhamuddinPhoto, showProjectCount: true, skills: ['Python', 'Django', 'React', 'Flutter', 'PostgreSQL', 'AI / Computer Vision'] },
-  { photo: abdulHaqPhoto, skills: ['React', 'Node.js', 'Express.js', 'PostgreSQL', 'Tailwind CSS', 'CCNA', 'SNMP', 'Syslog', 'Linux', 'Windows Server', 'VMware'] },
+  // projects: number shown as "N+ projects completed" (omit to hide it)
+  { photo: elhamuddinPhoto, projects: projectMeta.length, skills: ['Python', 'Django', 'React', 'Flutter', 'PostgreSQL', 'AI / Computer Vision'] },
+  { photo: abdulHaqPhoto, projects: 7, skills: ['React', 'Node.js', 'Express.js', 'PostgreSQL', 'Tailwind CSS', 'CCNA', 'SNMP', 'Syslog', 'Linux', 'Windows Server', 'VMware'] },
 ]
 
 export const navigation = [
