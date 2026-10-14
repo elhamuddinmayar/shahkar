@@ -1,4 +1,4 @@
-import { Compass, GraduationCap, HeartHandshake, ShieldCheck } from 'lucide-react'
+import { Compass, GraduationCap, HeartHandshake, ShieldCheck, Star } from 'lucide-react'
 import AnimatedBrand from '../components/AnimatedBrand'
 import { SiteCta } from '../components/Sections'
 import { projectMeta, teamMeta } from '../data/content'
@@ -26,15 +26,16 @@ export default function About() {
       <span className="label-line">{about.teamLabel}</span>
       <h2 className="section-title">{about.teamTitle}</h2>
       <div className="team-list">{t.team.map((person, index) => {
-        const { photo, skills } = teamMeta[index]
+        const { photo, skills, showProjectCount } = teamMeta[index]
         return <article className="team-card" key={index}>
           <img className="team-photo" src={photo} alt={person.name} loading="lazy" />
           <div className="team-info">
             <h3>{person.name}</h3>
             <span className="team-role">{person.role}</span>
-            <p className="team-education"><GraduationCap size={19} />{person.education}</p>
+            {person.education && <p className="team-education"><GraduationCap size={19} />{person.education}</p>}
             <p>{person.bio}</p>
-            <div className="team-stat"><strong dir="ltr">{projectMeta.length}+</strong><span>{about.projectsDone}</span></div>
+            {showProjectCount && <div className="team-stat"><strong dir="ltr">{projectMeta.length}+</strong><span>{about.projectsDone}</span></div>}
+            {person.keyProject && <p className="team-education"><Star size={19} />{person.keyProject}</p>}
             <div className="tags" dir="ltr">{skills.map(skill => <small key={skill}>{skill}</small>)}</div>
           </div>
         </article>

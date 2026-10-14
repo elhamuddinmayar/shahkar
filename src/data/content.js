@@ -1,5 +1,6 @@
 import { NetworkShieldLogo } from '../components/ProjectLogos'
 import elhamuddinPhoto from '../assets/team/elhamuddin-mayar.jpg'
+import abdulHaqPhoto from '../assets/team/abdul-haq-nabizoy.jpg'
 import { ArrowLeftRight, BookOpen, Blocks, BrainCircuit, Camera, CloudCog, Globe, GraduationCap, LandPlot, PanelsTopLeft, PenTool, Shirt, Smartphone, TrendingUp, Truck, Wallet, WashingMachine } from 'lucide-react'
 
 // Text for these lists lives in i18n/translations.js, in the same order.
@@ -23,7 +24,9 @@ export const projectMeta = [
 // Technical staff. Text (name, role, education, bio) is in i18n/translations.js
 // under `team`, in the same order. To add a person, add an entry in both places.
 export const teamMeta = [
-  { photo: elhamuddinPhoto, skills: ['Python', 'Django', 'React', 'Flutter', 'PostgreSQL', 'AI / Computer Vision'] },
+  // showProjectCount: shows the company's project total (the number of projects above)
+  { photo: elhamuddinPhoto, showProjectCount: true, skills: ['Python', 'Django', 'React', 'Flutter', 'PostgreSQL', 'AI / Computer Vision'] },
+  { photo: abdulHaqPhoto, skills: ['React', 'Node.js', 'Express.js', 'PostgreSQL', 'Tailwind CSS', 'CCNA', 'SNMP', 'Syslog', 'Linux', 'Windows Server', 'VMware'] },
 ]
 
 export const navigation = [
