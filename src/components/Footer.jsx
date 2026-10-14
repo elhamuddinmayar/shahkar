@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import logo from '../assets/shahkar-mark.png'
+import ShahkarLogo from './ShahkarLogo'
 import { company } from '../data/company'
 import { navigation } from '../data/content'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -9,7 +9,7 @@ export default function Footer() {
   return <footer className="site-footer">
     <div className="container footer-main">
       <div className="footer-about">
-        <Link to="/" className="brand brand--footer" dir="ltr"><img src={logo} alt="" width="44" height="44" /><span>SHAHKAR<small>SOFTWARE SOLUTION</small></span></Link>
+        <Link to="/" className="brand brand--footer" dir="ltr"><ShahkarLogo size={44} tone="light" /><span>SHAHKAR<small>SOFTWARE SOLUTION</small></span></Link>
         <p>{t.footer.tagline}</p>
       </div>
       <nav className="footer-links" aria-label="Footer">

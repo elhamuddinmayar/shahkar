@@ -13,8 +13,84 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Vazirmatn:wght@400;500;700;800&display=swap" rel="stylesheet" />
     <title>Shahkar Software Solution — Software for the way forward</title>
+    <!-- Loading screen. Styles are inline so it appears before the app bundle loads.
+         The logo shapes are a copy of src/components/ShahkarLogo.jsx; keep them in sync. -->
+    <style>
+      #app-loader {
+        position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center;
+        background: radial-gradient(circle at 50% 40%, #eaf1fc, #ffffff 60%);
+        transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.55s;
+        /* failsafe: never block the page if the app fails to start */
+        animation: loader-failsafe 0.4s 10s forwards;
+      }
+      #app-loader.app-loader--hide { opacity: 0; visibility: hidden; }
+      #app-loader.app-loader--hide .loader-inner { transform: scale(1.08); }
+      .loader-inner { display: grid; justify-items: center; gap: 22px; transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1); }
+      .loader-logo { width: 132px; height: auto; overflow: visible; animation: loader-float 2.6s 1.5s ease-in-out infinite; }
+      .loader-logo * { transform-box: fill-box; transform-origin: center; }
+
+      .loader-px { opacity: 0; transform: scale(0); animation: loader-pop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards, loader-twinkle 1.8s ease-in-out infinite; }
+      .loader-px:nth-child(1) { animation-delay: 0.05s, 1.2s; }
+      .loader-px:nth-child(2) { animation-delay: 0.12s, 1.5s; }
+      .loader-px:nth-child(3) { animation-delay: 0.19s, 1.3s; }
+      .loader-px:nth-child(4) { animation-delay: 0.26s, 1.7s; }
+      .loader-px:nth-child(5) { animation-delay: 0.33s, 1.4s; }
+      .loader-px:nth-child(6) { animation-delay: 0.40s, 1.6s; }
+      .loader-px:nth-child(7) { animation-delay: 0.47s, 1.8s; }
+
+      .loader-s { fill-opacity: 0; stroke: #1a5fd0; stroke-width: 7; stroke-dasharray: 1; stroke-dashoffset: 1;
+        animation: loader-draw 1s 0.15s cubic-bezier(0.65, 0, 0.35, 1) forwards, loader-fill 0.5s 0.85s ease forwards; }
+      .loader-fold, .loader-base { opacity: 0; transform: translateY(40px); animation: loader-rise 0.5s 0.95s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+      .loader-slash { opacity: 0; transform: translate(90px, -90px); animation: loader-slide 0.55s 1.05s cubic-bezier(0.34, 1.3, 0.64, 1) forwards; }
+
+      .loader-word { font: 800 15px/1 'Manrope', system-ui, sans-serif; color: #07154a; letter-spacing: 0.9em; margin-right: -0.9em; opacity: 0;
+        animation: loader-word 0.7s 1.1s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+      .loader-bar { width: 140px; height: 3px; border-radius: 3px; background: #dbe5f5; overflow: hidden; }
+      .loader-bar span { display: block; width: 40%; height: 100%; border-radius: 3px; background: linear-gradient(90deg, #1268d9, #ff6b1a); animation: loader-bar 1.1s ease-in-out infinite; }
+
+      @keyframes loader-pop { to { opacity: 1; transform: scale(1); } }
+      @keyframes loader-twinkle { 0%, 100% { fill-opacity: 1; } 50% { fill-opacity: 0.35; } }
+      @keyframes loader-draw { to { stroke-dashoffset: 0; } }
+      @keyframes loader-fill { to { fill-opacity: 1; stroke-opacity: 0; } }
+      @keyframes loader-rise { to { opacity: 1; transform: none; } }
+      @keyframes loader-slide { to { opacity: 1; transform: none; } }
+      @keyframes loader-word { from { letter-spacing: 1.6em; } to { opacity: 1; letter-spacing: 0.45em; margin-right: -0.45em; } }
+      @keyframes loader-bar { 0% { transform: translateX(-100%); } 100% { transform: translateX(250%); } }
+      @keyframes loader-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+      @keyframes loader-failsafe { to { opacity: 0; visibility: hidden; } }
+
+      @media (prefers-reduced-motion: reduce) {
+        .loader-logo, .loader-logo *, .loader-word { animation: none !important; opacity: 1 !important; transform: none !important; fill-opacity: 1 !important; stroke-opacity: 0 !important; }
+      }
+    </style>
+    <noscript><style>#app-loader { display: none; }</style></noscript>
   </head>
   <body>
+    <div id="app-loader" role="status" aria-label="Loading Shahkar Software Solution">
+      <div class="loader-inner">
+        <svg class="loader-logo" viewBox="0 0 950 936" aria-hidden="true">
+          <defs>
+            <linearGradient id="loader-s" x1="0" y1="0" x2="1" y2="0.35"><stop offset="0.25" stop-color="#070c3d" /><stop offset="1" stop-color="#1a5fd0" /></linearGradient>
+            <linearGradient id="loader-slash" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#070c3d" /><stop offset="0.75" stop-color="#1a5fd0" /></linearGradient>
+          </defs>
+          <g fill="#1a5fd0">
+            <rect class="loader-px" x="2" y="14" width="34" height="34" />
+            <rect class="loader-px" x="190" y="2" width="52" height="52" />
+            <rect class="loader-px" x="66" y="56" width="72" height="72" />
+            <rect class="loader-px" x="270" y="70" width="34" height="34" />
+            <rect class="loader-px" x="15" y="148" width="34" height="34" />
+            <rect class="loader-px" x="145" y="158" width="58" height="58" />
+            <rect class="loader-px" x="78" y="237" width="52" height="52" />
+          </g>
+          <path class="loader-slash" d="M735 107H945L655 395 485 358Z" fill="url(#loader-slash)" />
+          <path class="loader-s" pathLength="1" d="M430 107H637L515 235H430C370 235 325 272 325 320 325 370 360 400 430 412L590 440C720 463 812 545 812 690 812 830 720 925 600 925H300L440 795H585C635 795 662 760 662 712 662 665 630 620 560 608L400 580C290 560 205 500 185 390H172V345H212V315H182V263H235V185C285 135 355 107 430 107Z" fill="url(#loader-s)" />
+          <path class="loader-fold" d="M600 612C700 640 748 720 748 792 748 862 702 914 640 925H300L440 795H585C635 795 662 760 662 712 662 665 636 626 600 612Z" fill="#070c3d" />
+          <path class="loader-base" d="M190 488C230 570 300 630 380 655V760L190 930Z" fill="#070c3d" />
+        </svg>
+        <div class="loader-word">SHAHKAR</div>
+        <div class="loader-bar"><span></span></div>
+      </div>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

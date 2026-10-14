@@ -99,7 +99,7 @@ h1 em { font-style: normal; color: var(--orange); }
 .site-header--scrolled { padding: 0.55rem 0; box-shadow: 0 8px 24px rgba(7, 21, 74, 0.07); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1.2rem; }
 .brand { display: inline-flex; align-items: center; gap: 10px; flex: none; }
-.brand img { width: 42px; height: 42px; border-radius: 12px; }
+.brand svg { flex: none; }
 .brand span { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 1rem; color: var(--navy); letter-spacing: 0.03em; line-height: 1.05; display: flex; flex-direction: column; }
 .brand small { font-size: 0.55rem; font-weight: 700; letter-spacing: 0.22em; color: var(--text-soft); margin-top: 3px; }
 .nav-links { display: flex; align-items: center; gap: 0.2rem; }
@@ -183,7 +183,7 @@ h1 em { font-style: normal; color: var(--orange); }
   transition: transform 0.45s var(--ease);
 }
 .brand-art-card:hover { transform: translateY(-6px); }
-.brand-art-card img { width: 68%; filter: drop-shadow(0 10px 20px rgba(7, 21, 74, 0.2)); }
+.brand-art-logo { width: 62%; height: auto; filter: drop-shadow(0 10px 20px rgba(7, 21, 74, 0.2)); }
 
 /* ---------- Cards ---------- */
 .card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
