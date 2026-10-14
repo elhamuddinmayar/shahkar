@@ -223,6 +223,27 @@ h1 em { font-style: normal; color: var(--orange); }
 .about-layout .brand-art { max-width: 320px; }
 @media (max-width: 760px) { .about-layout { grid-template-columns: 1fr; } .about-layout .brand-art { max-width: 240px; } }
 
+/* ---------- Team ---------- */
+.team-list { display: grid; gap: 1.2rem; }
+.team-card {
+  display: grid; grid-template-columns: 260px 1fr; overflow: hidden;
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow-card);
+}
+.team-photo { width: 100%; height: 100%; min-height: 300px; object-fit: cover; object-position: center 30%; }
+.team-info { padding: clamp(1.4rem, 3vw, 2rem); display: flex; flex-direction: column; gap: 0.7rem; }
+.team-info h3 { font-size: 1.5rem; }
+.team-role { align-self: flex-start; font-size: 0.82rem; font-weight: 700; color: var(--orange); background: var(--orange-tint); padding: 0.25rem 0.8rem; border-radius: 999px; }
+.team-education { display: flex; align-items: center; gap: 0.5rem; color: var(--navy); font-weight: 600; }
+.team-education svg { color: var(--blue); flex: none; }
+.team-stat { display: flex; align-items: baseline; gap: 0.6rem; }
+.team-stat strong { font-family: 'Manrope', sans-serif; font-size: 2rem; font-weight: 800; color: var(--blue); line-height: 1; }
+.team-stat span { color: var(--text-soft); font-weight: 600; }
+.team-info .tags { margin-top: 0.2rem; padding-top: 0; }
+@media (max-width: 680px) {
+  .team-card { grid-template-columns: 1fr; }
+  .team-photo { height: 320px; min-height: 0; }
+}
+
 /* ---------- Contact ---------- */
 .contact-layout { display: grid; grid-template-columns: 0.75fr 1.25fr; gap: 2rem; align-items: start; }
 @media (max-width: 800px) { .contact-layout { grid-template-columns: 1fr; } }

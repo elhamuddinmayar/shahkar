@@ -57,7 +57,13 @@ export const translations = {
       title: 'About Shahkar',
       text: 'Shahkar Software Solution is a software team from Afghanistan. We build useful digital products for businesses, schools, and organizations.',
       valuesTitle: 'What guides us',
+      teamLabel: 'Our team',
+      teamTitle: 'Technical staff',
+      projectsDone: 'Projects completed',
     },
+    team: [
+      { name: 'Elhamuddin Mayar', role: 'Founder & Lead Software Engineer', education: 'Graduated in Software Engineering, Kabul University', bio: 'Leads Shahkar projects from design to delivery, including web systems, mobile apps, and AI solutions.' },
+    ],
     values: [
       { title: 'Listen first', description: 'We start by understanding your real need.' },
       { title: 'Build with quality', description: 'Clean code and reliable systems.' },
@@ -138,7 +144,13 @@ export const translations = {
       title: 'د شهکار په اړه',
       text: 'شهکار سافټویر سولوشن د افغانستان یو سافټویري ټیم دی. موږ د سوداګریو، ښوونځیو او ادارو لپاره ګټور ډیجیټل محصولات جوړوو.',
       valuesTitle: 'زموږ اصول',
+      teamLabel: 'زموږ ټیم',
+      teamTitle: 'تخنیکي کارکوونکي',
+      projectsDone: 'بشپړې شوې پروژې',
     },
+    team: [
+      { name: 'الهام الدین مایار', role: 'بنسټ ایښودونکی او مخکښ سافټویر انجینر', education: 'د کابل پوهنتون د سافټویر انجینرۍ څانګې فارغ', bio: 'د شهکار پروژې له ډیزاین څخه تر سپارلو پورې رهبري کوي، په ګډون د ویب سیسټمونو، موبایل اپلیکیشنونو او مصنوعي ځیرکتیا حلونو.' },
+    ],
     values: [
       { title: 'لومړی اورېدل', description: 'لومړی ستاسو اصلي اړتیا درک کوو.' },
       { title: 'په کیفیت جوړول', description: 'پاک کوډ او باوري سیسټمونه.' },
@@ -219,7 +231,13 @@ export const translations = {
       title: 'درباره شهکار',
       text: 'شهکار سافتویر سولوشن یک تیم نرم‌افزاری از افغانستان است. ما برای کسب‌وکارها، مکاتب و ادارات محصولات دیجیتال مفید می‌سازیم.',
       valuesTitle: 'اصول ما',
+      teamLabel: 'تیم ما',
+      teamTitle: 'کارمندان فنی',
+      projectsDone: 'پروژه‌های تکمیل‌شده',
     },
+    team: [
+      { name: 'الهام الدین مایار', role: 'بنیان‌گذار و انجنیر ارشد نرم‌افزار', education: 'فارغ‌التحصیل رشته انجنیری نرم‌افزار، پوهنتون کابل', bio: 'پروژه‌های شهکار را از طراحی تا تحویل رهبری می‌کند، شامل سیستم‌های وب، اپلیکیشن‌های موبایل و راه‌حل‌های هوش مصنوعی.' },
+    ],
     values: [
       { title: 'اول شنیدن', description: 'ابتدا نیاز واقعی شما را درک می‌کنیم.' },
       { title: 'ساخت با کیفیت', description: 'کد پاک و سیستم‌های قابل اعتماد.' },
