@@ -23,11 +23,11 @@ export function ProjectGrid({ limit }) {
   const { t } = useLanguage()
   const projects = limit ? t.projects.slice(0, limit) : t.projects
   return <div className="card-grid">{projects.map((project, index) => {
-    const { icon: Icon, stack } = projectMeta[index]
+    const { icon: Icon, stack, tone = 'orange' } = projectMeta[index]
     return <article className="card project-card" key={index}>
-      <div className="project-card-top"><span className="card-icon card-icon--orange"><Icon size={24} strokeWidth={1.7} /></span><span className="project-category">{project.category}</span></div>
+      <div className="project-card-top"><span className={`card-icon card-icon--${tone}`}><Icon size={24} strokeWidth={1.7} /></span><span className="project-category">{project.category}</span></div>
       <h3>{project.title}</h3><p>{project.description}</p>
-      <div className="tags" dir="ltr">{stack.map(item => <small key={item}>{item}</small>)}</div>
+      {stack.length > 0 && <div className="tags" dir="ltr">{stack.map(item => <small key={item}>{item}</small>)}</div>}
     </article>
   })}</div>
 }

@@ -199,6 +199,7 @@ h1 em { font-style: normal; color: var(--orange); }
 .card p { font-size: 0.95rem; }
 .card-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; background: var(--blue-tint); color: var(--blue); flex: none; }
 .card-icon--orange { background: var(--orange-tint); color: var(--orange); }
+.card-icon--blue { background: var(--blue-tint); color: var(--blue); }
 .project-card-top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
 .project-category { font-size: 0.75rem; font-weight: 700; color: var(--orange); background: var(--orange-tint); padding: 0.25rem 0.7rem; border-radius: 999px; }
 .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 1.2rem; }

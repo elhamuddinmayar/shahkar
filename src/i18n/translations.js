@@ -44,6 +44,8 @@ export const translations = {
       { title: 'Shahkar Exchange — Web & Mobile', category: 'Finance', description: 'A money exchange and transfer system with multi-currency wallets, live rates, remittances, KYC checks, and reports, plus a mobile app for customers to send money and exchange currency.' },
       { title: 'Qased — Parcel Delivery', category: 'Logistics', description: 'A parcel delivery platform for Afghanistan with tracking, pricing, branches, and finance, in English, Dari, and Pashto.' },
       { title: 'Quran Karim — Pashto', category: 'Mobile', description: 'A Quran app with Pashto translation and tafsir, audio recitation, search, bookmarks, and duas.' },
+      { title: 'Smart Network Monitoring', category: 'Networking', description: 'Tracks device status and performance, detects network failures, sends real-time alerts, and manages the whole network from one place.' },
+      { title: 'Land & Facilities Information System', category: 'Government · Management', description: 'Built for the Ministry of Agriculture, Irrigation and Livestock to keep land, property, facility, contract, payment, and document records in one system with reports. It can also be adapted for procurement and contract management in NGOs and companies.' },
     ],
     about: {
       label: 'About us',
@@ -118,6 +120,8 @@ export const translations = {
       { title: 'شهکار صرافي — ویب او موبایل', category: 'مالي', description: 'د پیسو د تبادلې او لېږد سیسټم: څو اسعاري والټونه، ژوندي نرخونه، حوالې، د هویت تایید (KYC) او راپورونه، او د پېرودونکو لپاره موبایل اپلیکیشن چې پیسې ولېږي او اسعار تبادله کړي.' },
       { title: 'قاصد — د پارسلونو رسول', category: 'ترانسپورت', description: 'د افغانستان لپاره د پارسل رسولو پلاتفورم: تعقیب، بیې، څانګې او مالي برخه، په انګلیسي، دري او پښتو.' },
       { title: 'قرآن کریم — پښتو', category: 'موبایل', description: 'د قرآن کریم اپلیکیشن له پښتو ژباړې او تفسیر، غږیز تلاوت، لټون، نښو او دعاګانو سره.' },
+      { title: 'هوښیار د شبکې څارنه', category: 'شبکه', description: 'د وسایلو حالت او کارکړدګي څاري، د شبکې ستونزې پېژني، سمدستي خبرتیاوې لېږي او ټوله شبکه له یوه ځایه اداره کوي.' },
+      { title: 'د ځمکو او تاسیساتو معلوماتي سیسټم', category: 'دولتي · مدیریت', description: 'د کرنې، اوبو لګولو او مالدارۍ وزارت لپاره جوړ شوی، چې د ځمکو، ملکیتونو، تاسیساتو، قراردادونو، تادیاتو او اسنادو ریکارډونه له راپورونو سره په یوه سیسټم کې ساتي. د NGOګانو او شرکتونو کې د تدارکاتو او قراردادونو د مدیریت لپاره هم کارول کېدای شي.' },
     ],
     about: {
       label: 'زموږ په اړه',
@@ -192,6 +196,8 @@ export const translations = {
       { title: 'صرافی شهکار — وب و موبایل', category: 'مالی', description: 'سیستم صرافی و انتقال پول با کیف‌پول‌های چندارزی، نرخ‌های زنده، حواله‌ها، تأیید هویت (KYC) و گزارش‌ها، همراه با اپلیکیشن موبایل برای مشتریان جهت ارسال پول و تبادله ارز.' },
       { title: 'قاصد — ارسال بسته', category: 'لوجستیک', description: 'پلتفرم ارسال بسته برای افغانستان با پیگیری، قیمت‌گذاری، شعبه‌ها و بخش مالی، به انگلیسی، دری و پشتو.' },
       { title: 'قرآن کریم — پشتو', category: 'موبایل', description: 'اپلیکیشن قرآن کریم با ترجمه و تفسیر پشتو، تلاوت صوتی، جستجو، نشانه‌گذاری و دعاها.' },
+      { title: 'نظارت هوشمند شبکه', category: 'شبکه', description: 'وضعیت و عملکرد دستگاه‌ها را نظارت می‌کند، خرابی‌های شبکه را تشخیص می‌دهد، هشدار فوری می‌فرستد و کل شبکه را از یک جا مدیریت می‌کند.' },
+      { title: 'سیستم معلوماتی زمین و تأسیسات', category: 'دولتی · مدیریت', description: 'برای وزارت زراعت، آبیاری و مالداری ساخته شده تا سوابق زمین، املاک، تأسیسات، قراردادها، پرداخت‌ها و اسناد را همراه با گزارش‌ها در یک سیستم نگه دارد. برای مدیریت تدارکات و قراردادها در NGOها و شرکت‌ها نیز قابل استفاده است.' },
     ],
     about: {
       label: 'درباره ما',
